@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — V Craft Beds</title>
+  <meta name="description" content="Review your V Craft Beds basket, adjust sizes and quantities, and head to secure checkout.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">Free design guidance, secure checkout, and premium delivery support across the UK.</div>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo-wrap" href="index.html">
+      <img src="images/logo.JPG" alt="V Craft Beds logo">
+      <div class="brand-lines">
+        <strong>V Craft Beds</strong>
+        <span>Luxury beds & mattresses</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="beds.html">Beds</a></li>
+      <li><a href="mattresses.html">Mattresses</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+    <a class="nav-cta" href="help.html">Speak to support</a>
+  </div>
+</header>
+<main data-cart-page>
+  <section class="page-hero">
+    <div class="container page-hero-card panel">
+      <div class="eyebrow">Your cart</div>
+      <h1>Luxury pieces, ready when you are.</h1>
+      <p>Review your selected beds and mattresses, adjust quantities, and move to secure checkout in one place.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:16px;">
+    <div class="container cart-layout">
+      <div class="cart-shell">
+        <div class="cart-shell-head">
+          <div>
+            <span class="eyebrow">Selected products</span>
+            <h2>Basket overview</h2>
+          </div>
+          <div class="cart-count-chip" id="cartItemCount">0 items</div>
+        </div>
+        <div id="cartEmpty" class="cart-empty panel" hidden>
+          <h3>Your cart is empty</h3>
+          <p>Browse the latest bed frames and mattresses, then add your favourites to build your order.</p>
+          <div class="inline-actions">
+            <a class="btn" href="beds.html">Shop beds</a>
+            <a class="ghost-btn" href="mattresses.html">Shop mattresses</a>
+          </div>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+      </div>
+      <aside id="cartSummary" class="cart-summary">
+        <div class="summary-card">
+          <div class="summary-head">
+            <div>
+              <span class="eyebrow">Order summary</span>
+              <h2>Secure checkout</h2>
+            </div>
+            <span class="summary-badge">Stripe protected</span>
+          </div>
+          <div class="summary-row"><span>Subtotal</span><strong id="cartSubtotal">£0</strong></div>
+          <div class="summary-row"><span>Delivery</span><strong>Calculated at checkout</strong></div>
+          <div class="summary-row total"><span>Total</span><strong id="cartTotal">£0</strong></div>
+          <button id="cartCheckoutBtn" class="btn cart-checkout" type="button">Proceed to secure checkout</button>
+          <a class="ghost-btn full-width" href="help.html">Need delivery advice?</a>
+          <div class="cart-promise">
+            <div><strong>Premium support</strong><p>Questions about sizes, comfort, or finish? Our team can guide you before checkout.</p></div>
+            <div><strong>Made to order</strong><p>Each bed is crafted to order, with mattresses selected for comfort and long-term support.</p></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo-wrap">
+        <img src="images/logo.JPG" alt="V Craft Beds logo">
+        <div class="brand-lines"><strong>V Craft Beds</strong><span>Made for comfort, styled for impact.</span></div>
+      </div>
+      <p>Premium beds and mattresses with secure checkout, delivery support, and made-to-order finishes.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <div class="footer-links">
+        <a href="beds.html">Beds</a>
+        <a href="mattresses.html">Mattresses</a>
+        <a href="cart.html">Cart</a>
+      </div>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <div class="footer-links">
+        <a href="help.html">Customer support</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="returns.html">Returns</a>
+      </div>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="success.html">Order confirmation</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 V Craft Beds. All rights reserved.</span>
+    <span>Secure payments via Stripe</span>
+  </div>
+</footer>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="script.js"></script>
+</body>
+</html>

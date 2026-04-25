@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Support — V Craft Beds</title>
+  <meta name="description" content="Customer support, FAQs, and contact help for V Craft Beds.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announcement">Free design guidance, secure checkout, and premium delivery support across the UK.</div>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="logo-wrap" href="index.html">
+      <img src="images/logo.JPG" alt="V Craft Beds logo">
+      <div class="brand-lines">
+        <strong>V Craft Beds</strong>
+        <span>Luxury beds & mattresses</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="beds.html">Beds</a></li>
+      <li><a href="mattresses.html">Mattresses</a>
+        <a href="cart.html">Cart</a></li>
+      <li><a href="help.html">Help</a></li>
+    </ul>
+    <a class="nav-cta" href="help.html">Speak to support</a>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="container page-hero-card panel">
+      <div class="eyebrow">Help & support</div>
+      <h1>Customer support that feels premium too.</h1>
+      <p>Use the support form for product questions, order updates, delivery guidance, or aftercare help.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:18px;">
+    <div class="container support-grid">
+      <div class="support-card">
+        <h3>Contact support</h3>
+        <p>We recommend including your preferred product, room size, and any questions about delivery or finish.</p>
+        <form class="support-form" action="mailto:vcraftbeds@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Full name" required>
+          <input type="email" name="email" placeholder="Email address" required>
+          <input type="text" id="supportProduct" name="product" placeholder="Product of interest">
+          <select name="reason" required>
+            <option value="">Select reason</option>
+            <option>Product question</option>
+            <option>Delivery question</option>
+            <option>Order update</option>
+            <option>Custom order enquiry</option>
+          </select>
+          <textarea name="message" placeholder="Tell us what you need help with" required></textarea>
+          <button class="btn" type="submit">Open email draft</button>
+        </form>
+      </div>
+      <div class="detail-stack">
+        <div class="support-card">
+          <h3>How we help</h3>
+          <p>Our support page is built to answer the questions customers ask before buying larger-ticket furniture online.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item"><details><summary>How long does delivery take?</summary><p>Delivery timing depends on the product and your location. Many orders are arranged within a few working days, while made-to-order items may take longer.</p></details></article>
+          <article class="faq-item"><details><summary>Can I ask about sizes before ordering?</summary><p>Yes. Send your room dimensions and preferred bed size and we can help guide you toward the best fit.</p></details></article>
+          <article class="faq-item"><details><summary>Do you help after checkout?</summary><p>Yes. Once your order is placed, you can still contact us for delivery coordination and order support.</p></details></article>
+          <article class="faq-item"><details><summary>Can I order a custom finish?</summary><p>For custom requests, contact support before ordering so we can confirm what is possible for your chosen product.</p></details></article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="logo-wrap">
+        <img src="images/logo.JPG" alt="V Craft Beds logo">
+        <div class="brand-lines"><strong>V Craft Beds</strong><span>Made for comfort, styled for impact.</span></div>
+      </div>
+      <p>Premium beds and mattresses with secure checkout, delivery support, and made-to-order finishes.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <div class="footer-links">
+        <a href="beds.html">Beds</a>
+        <a href="mattresses.html">Mattresses</a>
+        <a href="product.html?id=bed1">Best seller</a>
+      </div>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <div class="footer-links">
+        <a href="help.html">Customer support</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="returns.html">Returns</a>
+      </div>
+    </div>
+    <div>
+      <h4>Policies</h4>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="success.html">Order confirmation</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 V Craft Beds. All rights reserved.</span>
+    <span>Secure payments via Stripe</span>
+  </div>
+</footer>
+<div id="imageModal" class="image-modal">
+  <div class="image-modal-dialog">
+    <div class="image-modal-stage">
+      <button class="image-modal-close" type="button" data-close-modal>×</button>
+      <button class="image-nav prev" type="button" data-prev-modal>‹</button>
+      <img src="" alt="Product preview" data-modal-image>
+      <button class="image-nav next" type="button" data-next-modal>›</button>
+    </div>
+    <div style="padding:16px 8px 4px;"><strong data-modal-title></strong></div>
+    <div class="modal-thumbs" data-modal-thumbs></div>
+  </div>
+</div>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="script.js"></script>
+</body>
+</html>
