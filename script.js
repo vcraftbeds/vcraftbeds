@@ -827,3 +827,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadReviews();
 });
+const deliverySelect = document.getElementById("deliverySelect");
+
+let deliveryPrice = 60;
+
+deliverySelect?.addEventListener("change", () => {
+  deliveryPrice = Number(deliverySelect.value);
+
+  console.log("Delivery selected:", deliveryPrice);
+});
