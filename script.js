@@ -789,7 +789,7 @@ async function loadReviews() {
   const { data, error } = await db
     .from("reviews")
     .select("*")
-    .order("created_at", { ascending: false });
+    .order("id", { ascending: false });
 
   if (error) {
     console.error(error);
