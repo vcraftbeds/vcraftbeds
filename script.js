@@ -777,3 +777,59 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCartPage();
   initSupportPrefill();
 });
+const supabaseUrl = "YOUR_SUPABASE_PROJECT_URL";
+const supabaseKey = "YOUR_SUPABASE_ANON_KEY";
+
+const db = supabase.createClient(supabaseUrl, supabaseKey);
+
+const reviewForm = document.getElementById("review-form");
+const reviewsList = document.getElementById("reviews-list");
+
+async function loadReviews() {
+  const { data, error } = await db
+    .from("reviews")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+
+  reviewsList.innerHTML = data.map(review => `
+    <div class="review-card">
+      <h4>${review.customer_name}</h4>
+      <p>${"★".repeat(review.rating)}</p>
+      <p>${review.comment}</p>
+    </div>
+  `).join("");
+}
+
+reviewForm?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const review = {
+    product_name: form.product_name.value,
+    customer_name: form.customer_name.value,
+    rating: Number(form.rating.value),
+    comment: form.comment.value
+  };
+
+  const { error } = await db
+    .from("reviews")
+    .insert(review);
+
+  if (error) {
+    alert("Review could not be submitted.");
+    console.error(error);
+    return;
+  }
+
+  alert("Thank you for your review!");
+  form.reset();
+  loadReviews();
+});
+
+loadReviews();
