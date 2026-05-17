@@ -1,4 +1,4 @@
-
+3
 const FABRIC_COLLECTIONS = {
   teddy: {
     key: 'teddy',
@@ -585,7 +585,42 @@ const totalPrice =
       const response = await fetch('/create-checkout-session', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          items: [{ name: `${product.name} — ${sizeSelect.options[sizeSelect.selectedIndex].textContent.split(' — ')[0]}${fabricSelector.getSelectedFabric() ? ` • ${fabricSelector.getSelectedFabric()}` : ''}`, price: Number(sizeSelect.value) + Number(fabricSelector.getSelectedSurcharge() || 0), quantity }]
+          const deliverySelect =
+  document.getElementById('deliverySelect');
+
+const deliveryPrice =
+  Number(deliverySelect?.value || 60);
+
+const deliveryName =
+  deliverySelect?.options[
+    deliverySelect.selectedIndex
+  ]?.textContent || 'Delivery';
+
+const items = [
+
+  {
+    name:
+      `${product.name} — ${sizeName}`,
+
+    price:
+      totalPrice,
+
+    quantity:
+      quantity
+  },
+
+  {
+    name:
+      deliveryName,
+
+    price:
+      deliveryPrice,
+
+    quantity:
+      quantity
+  }
+
+];
         })
       });
       const data = await response.json();
