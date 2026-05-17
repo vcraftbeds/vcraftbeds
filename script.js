@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSupportPrefill();
 });
 const supabaseUrl = "https://njqubkrfdbpauclupwjs.supabase.co/rest/v1/";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5qcXVia3JmZGJwYXVjbHVwd2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwMDU5NTQsImV4cCI6MjA5NDU4MTk1NH0.HIIA9b2Bq-MnVOVCV0bCpG7QQ0YeHXIWeAZVNlOsuXk";
+const supabaseKey = "sb_publishable_cfco2vuesEKcV2uk1cRwRA_u2xXRJMP";
 
 const db = supabase.createClient(supabaseUrl, supabaseKey);
 
