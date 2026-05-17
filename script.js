@@ -827,12 +827,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loadReviews();
 });
-const deliverySelect = document.getElementById("deliverySelect");
+const deliverySelect =
+  document.getElementById("deliverySelect");
 
-let deliveryPrice = 60;
+const selectedDeliveryOption =
+  deliverySelect.options[
+    deliverySelect.selectedIndex
+  ];
 
-deliverySelect?.addEventListener("change", () => {
-  deliveryPrice = Number(deliverySelect.value);
+const deliveryPrice =
+  Number(deliverySelect.value);
 
-  console.log("Delivery selected:", deliveryPrice);
-});
+const deliveryName =
+  selectedDeliveryOption.dataset.deliveryName;
+
+const items = [
+
+  {
+
+    name:
+      `${product.name} — ${selectedOption.dataset.sizeName}`,
+
+    price:
+      selectedPrice,
+
+    quantity:
+      quantity
+
+  },
+
+  {
+
+    name:
+      `${deliveryName} (7–10 working days)`,
+
+    price:
+      deliveryPrice,
+
+    quantity:
+      quantity
+
+  }
+
+];
