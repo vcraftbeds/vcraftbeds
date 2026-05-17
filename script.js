@@ -585,42 +585,18 @@ const totalPrice =
       const response = await fetch('/create-checkout-session', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          const deliverySelect =
-  document.getElementById('deliverySelect');
-
-const deliveryPrice =
-  Number(deliverySelect?.value || 60);
-
-const deliveryName =
-  deliverySelect?.options[
-    deliverySelect.selectedIndex
-  ]?.textContent || 'Delivery';
-
-const items = [
-
-  {
-    name:
-      `${product.name} — ${sizeName}`,
-
-    price:
-      totalPrice,
-
-    quantity:
-      quantity
+          items: [
+  { 
+    name: `${product.name} — ${sizeSelect.options[sizeSelect.selectedIndex].textContent.split(' — ')[0]}${fabricSelector.getSelectedFabric() ? ` • ${fabricSelector.getSelectedFabric().name}` : ''}`, 
+    price: totalPrice, 
+    quantity 
   },
-
   {
-    name:
-      deliveryName,
-
-    price:
-      deliveryPrice,
-
-    quantity:
-      quantity
+    name: `${document.getElementById('deliverySelect')?.options[document.getElementById('deliverySelect')?.selectedIndex]?.textContent || 'Delivery'}`,
+    price: Number(document.getElementById('deliverySelect')?.value || 60),
+    quantity
   }
-
-];
+]
         })
       });
       const data = await response.json();
