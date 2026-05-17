@@ -786,6 +786,8 @@ const reviewForm = document.getElementById("review-form");
 const reviewsList = document.getElementById("reviews-list");
 
 async function loadReviews() {
+  if (!reviewsList) return;
+
   const { data, error } = await db
     .from("reviews")
     .select("*")
