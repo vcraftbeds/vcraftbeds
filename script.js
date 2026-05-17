@@ -777,8 +777,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCartPage();
   initSupportPrefill();
 });
-const supabaseUrl = "YOUR_SUPABASE_PROJECT_URL";
-const supabaseKey = "YOUR_SUPABASE_ANON_KEY";
+const supabaseUrl = "https://njqubkrfdbpauclupwjs.supabase.co/rest/v1/";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5qcXVia3JmZGJwYXVjbHVwd2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkwMDU5NTQsImV4cCI6MjA5NDU4MTk1NH0.HIIA9b2Bq-MnVOVCV0bCpG7QQ0YeHXIWeAZVNlOsuXk";
 
 const db = supabase.createClient(supabaseUrl, supabaseKey);
 
