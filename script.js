@@ -762,76 +762,68 @@ function initSupportPrefill() {
   if (product) field.value = product;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ensureCartNav();
-  updateCartCount();
-  clearCartOnSuccess();
-  initOfferPopup();
-  initImageModal();
-  document.querySelectorAll('[data-product-grid]').forEach(grid => {
-    const category = grid.getAttribute('data-product-grid');
-    const enableFilters = grid.hasAttribute('data-primary-grid');
-    renderProductGrid(grid, getProductsByCategory(category), category, { enableFilters });
+document.addEventListener("DOMContentLoaded", () => {
+  const supabaseUrl = "https://njqubkrfdbpauclupwjs.supabase.co";
+  const supabaseKey = "sb_publishable_cfco2vuesEKcV2uk1cRwRA_u2xXRJMP";
+
+  if (!window.supabase) {
+    console.error("Supabase script is not loaded");
+    return;
+  }
+
+  const db = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+  const reviewForm = document.getElementById("review-form");
+  const reviewsList = document.getElementById("reviews-list");
+
+  if (!reviewForm || !reviewsList) {
+    return;
+  }
+
+  async function loadReviews() {
+    const { data, error } = await db
+      .from("reviews")
+      .select("*")
+      .order("id", { ascending: false });
+
+    if (error) {
+      console.error("Load reviews error:", error);
+      return;
+    }
+
+    reviewsList.innerHTML = data.map(review => `
+      <div class="review-card">
+        <h4>${review.customer_name}</h4>
+        <p>${"★".repeat(review.rating)}</p>
+        <p>${review.comment}</p>
+      </div>
+    `).join("");
+  }
+
+  reviewForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const { error } = await db.from("reviews").insert([
+      {
+        product_name: form.product_name.value,
+        customer_name: form.customer_name.value,
+        rating: Number(form.rating.value),
+        comment: form.comment.value
+      }
+    ]);
+
+    if (error) {
+      console.error("Insert review error:", error);
+      alert("Review could not be submitted.");
+      return;
+    }
+
+    alert("Thank you for your review!");
+    form.reset();
+    loadReviews();
   });
-  initProductPage();
-  renderCartPage();
-  initSupportPrefill();
-});
-const supabaseUrl = "https://njqubkrfdbpauclupwjs.supabase.co";
-const supabaseKey = "sb_publishable_cfco2vuesEKcV2uk1cRwRA_u2xXRJMP";
 
-const db = supabase.createClient(supabaseUrl, supabaseKey);
-
-const reviewForm = document.getElementById("review-form");
-const reviewsList = document.getElementById("reviews-list");
-
-async function loadReviews() {
-  if (!reviewsList) return;
-
-  const { data, error } = await db
-    .from("reviews")
-    .select("*")
-    .order("id", { ascending: false });
-
-  if (error) {
-    console.error(error);
-    return;
-  }
-
-  reviewsList.innerHTML = data.map(review => `
-    <div class="review-card">
-      <h4>${review.customer_name}</h4>
-      <p>${"★".repeat(review.rating)}</p>
-      <p>${review.comment}</p>
-    </div>
-  `).join("");
-}
-
-reviewForm?.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const form = e.target;
-
-  const review = {
-    product_name: form.product_name.value,
-    customer_name: form.customer_name.value,
-    rating: Number(form.rating.value),
-    comment: form.comment.value
-  };
-
-  const { error } = await db
-    .from("reviews")
-    .insert(review);
-
-  if (error) {
-    alert("Review could not be submitted.");
-    console.error(error);
-    return;
-  }
-
-  alert("Thank you for your review!");
-  form.reset();
   loadReviews();
 });
-
-loadReviews();
