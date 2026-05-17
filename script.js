@@ -777,7 +777,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCartPage();
   initSupportPrefill();
 });
-const supabaseUrl = "https://vcraftbeds.supabase.co";
+const supabaseUrl = "https://njqubkrfdbpauclupwjs.supabase.co";
 const supabaseKey = "sb_publishable_cfco2vuesEKcV2uk1cRwRA_u2xXRJMP";
 
 const db = supabase.createClient(supabaseUrl, supabaseKey);
