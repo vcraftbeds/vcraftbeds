@@ -57,8 +57,8 @@ app.post('/create-checkout-session', async (req, res) => {
       customer_creation: 'always',
       phone_number_collection: { enabled: true },
       line_items,
-      success_url: `${SITE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${SITE_URL}/cancel`,
+      success_url: `${SITE_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${SITE_URL}/cancel.html`,
       metadata: { store: 'V Craft Beds' },
     });
 
