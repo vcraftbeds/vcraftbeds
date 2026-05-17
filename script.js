@@ -761,7 +761,22 @@ function initSupportPrefill() {
   const product = new URLSearchParams(window.location.search).get('product');
   if (product) field.value = product;
 }
+document.addEventListener("DOMContentLoaded", () => {
+  ensureCartNav();
+  updateCartCount();
+  initImageModal();
 
+  renderCatalog("beds");
+  renderCatalog("mattresses");
+  renderCatalog("divans");
+  renderCatalog("ottomans");
+
+  initProductPage();
+  renderCartPage();
+  clearCartOnSuccess();
+  initOfferPopup();
+  initSupportPrefill();
+});
 document.addEventListener("DOMContentLoaded", () => {
   const supabaseUrl = "https://njqubkrfdbpauclupwjs.supabase.co";
   const supabaseKey = "sb_publishable_cfco2vuesEKcV2uk1cRwRA_u2xXRJMP";
