@@ -355,89 +355,42 @@ button, input, select, textarea { font: inherit; }
   .fabric-color-chip { padding-left: 8px; }
   .fabric-color-dot { width: 18px; height: 18px; }
 }
-/* =========================
-   PREMIUM BRANDING
-========================= */
-
 .logo-wrap {
-  gap: 20px;
+  gap: 24px;
+  align-items: center;
 }
 
 .logo-wrap img {
-  width: 82px;
-  height: 82px;
-  border-radius: 22px;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
+  border-radius: 26px;
+
   box-shadow:
-    0 12px 30px rgba(0,0,0,0.12),
-    0 4px 12px rgba(138,99,69,0.18);
+    0 20px 45px rgba(0,0,0,0.18),
+    0 6px 18px rgba(138,99,69,0.22);
+
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform .35s ease,
+    box-shadow .35s ease;
 }
 
 .logo-wrap img:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 20px 45px rgba(0,0,0,0.18),
-    0 8px 20px rgba(138,99,69,0.25);
+  transform: scale(1.06);
 }
 
 .brand-lines strong {
-  font-size: 30px;
+  font-size: 42px;
   font-weight: 900;
-  letter-spacing: -0.03em;
-  color: #241a12;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
 }
 
 .brand-lines span {
-  font-size: 15px;
+  font-size: 18px;
   color: #8a6345;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-/* Floating luxury effect */
-
-.site-header {
-  backdrop-filter: blur(18px);
-  background: rgba(251,248,243,0.94);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
-}
-
-/* Hero branding */
-
-.hero-copy::before {
-  content: "V CRAFT BEDS";
-  display: block;
-  font-size: 14px;
-  letter-spacing: 0.4em;
-  font-weight: 900;
-  color: #8a6345;
-  margin-bottom: 20px;
-}
-
-/* Watermark branding */
-
-.hero::after {
-  content: "V CRAFT";
-  position: absolute;
-  top: 120px;
-  right: 5%;
-  font-size: 140px;
-  font-weight: 900;
-  color: rgba(138,99,69,0.05);
-  pointer-events: none;
-  z-index: 0;
-  letter-spacing: -0.06em;
-}
-
-/* Premium nav */
-
-.nav-links a {
-  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 /* Mobile */
@@ -445,22 +398,109 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 760px) {
 
   .logo-wrap img {
-    width: 64px;
-    height: 64px;
+    width: 76px;
+    height: 76px;
   }
 
   .brand-lines strong {
-    font-size: 22px;
+    font-size: 28px;
   }
 
   .brand-lines span {
-    font-size: 12px;
+    font-size: 13px;
   }
 
-  .hero::after {
-    font-size: 72px;
-    top: 80px;
-    right: 2%;
+}
+
+}
+.site-header {
+
+  backdrop-filter: blur(18px);
+
+  background:
+    rgba(251,248,243,0.96);
+
+  border-bottom:
+    1px solid rgba(0,0,0,0.04);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.05);
+
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+
+  content: "V CRAFT";
+
+  position: absolute;
+
+  top: 20px;
+  right: -20px;
+
+  font-size: 220px;
+
+  font-weight: 900;
+
+  color:
+    rgba(138,99,69,0.04);
+
+  letter-spacing: -0.08em;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+.luxury-strip {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5,1fr);
+
+  gap: 20px;
+
+  padding: 28px;
+
+  background: #241a12;
+
+  color: white;
+
+  text-align: center;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  border-radius: 28px;
+
+  margin-top: 40px;
+}
+
+@media (max-width: 760px) {
+
+  .luxury-strip {
+    grid-template-columns: 1fr;
   }
+
+}
+.product-card {
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.product-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.12);
 
 }
