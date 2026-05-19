@@ -547,15 +547,14 @@ async function initProductPage() {
 
 const totalPrice =
   basePrice +
-  document
-  .getElementById('deliverySelect')
-  ?.addEventListener('change', updatePrice);
-  Number(fabricSelector.getSelectedSurcharge() || 0) +
-  deliveryPrice;
+  Number(fabricSelector.getSelectedSurcharge() || 0);
     priceEl.textContent = formatPrice(totalPrice);
     document.getElementById('selectedSizeCopy').textContent = sizeSelect.options[sizeSelect.selectedIndex].textContent;
   };
   sizeSelect.addEventListener('change', updatePrice);
+  document
+.getElementById('deliverySelect')
+?.addEventListener('change', updatePrice);
   fabricSelector.onChange(updatePrice);
   updatePrice();
 
