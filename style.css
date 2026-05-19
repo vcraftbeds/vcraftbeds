@@ -355,3 +355,112 @@ button, input, select, textarea { font: inherit; }
   .fabric-color-chip { padding-left: 8px; }
   .fabric-color-dot { width: 18px; height: 18px; }
 }
+/* =========================
+   PREMIUM BRANDING
+========================= */
+
+.logo-wrap {
+  gap: 20px;
+}
+
+.logo-wrap img {
+  width: 82px;
+  height: 82px;
+  border-radius: 22px;
+  object-fit: cover;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.12),
+    0 4px 12px rgba(138,99,69,0.18);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.logo-wrap img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.18),
+    0 8px 20px rgba(138,99,69,0.25);
+}
+
+.brand-lines strong {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #241a12;
+}
+
+.brand-lines span {
+  font-size: 15px;
+  color: #8a6345;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Floating luxury effect */
+
+.site-header {
+  backdrop-filter: blur(18px);
+  background: rgba(251,248,243,0.94);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+}
+
+/* Hero branding */
+
+.hero-copy::before {
+  content: "V CRAFT BEDS";
+  display: block;
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  font-weight: 900;
+  color: #8a6345;
+  margin-bottom: 20px;
+}
+
+/* Watermark branding */
+
+.hero::after {
+  content: "V CRAFT";
+  position: absolute;
+  top: 120px;
+  right: 5%;
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(138,99,69,0.05);
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.06em;
+}
+
+/* Premium nav */
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+
+  .logo-wrap img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .brand-lines strong {
+    font-size: 22px;
+  }
+
+  .brand-lines span {
+    font-size: 12px;
+  }
+
+  .hero::after {
+    font-size: 72px;
+    top: 80px;
+    right: 2%;
+  }
+
+}
