@@ -546,19 +546,16 @@ async function initProductPage() {
   Number(document.getElementById('deliverySelect')?.value || 60);
 
 const totalPrice =
-  const totalPrice =
   basePrice +
-  Number(fabricSelector.getSelectedSurcharge() || 0) +
-  deliveryPrice;
+  document
+  .getElementById('deliverySelect')
+  ?.addEventListener('change', updatePrice);
   Number(fabricSelector.getSelectedSurcharge() || 0) +
   deliveryPrice;
     priceEl.textContent = formatPrice(totalPrice);
     document.getElementById('selectedSizeCopy').textContent = sizeSelect.options[sizeSelect.selectedIndex].textContent;
   };
   sizeSelect.addEventListener('change', updatePrice);
-  document
-  .getElementById('deliverySelect')
-  ?.addEventListener('change', updatePrice);
   fabricSelector.onChange(updatePrice);
   updatePrice();
 
