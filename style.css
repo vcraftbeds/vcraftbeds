@@ -27,7 +27,7 @@ button, input, select, textarea { font: inherit; }
   background: #241a12; color: #f9f2eb; text-align: center; padding: 12px 16px; font-size: 14px; letter-spacing: 0.04em;
 }
 .site-header {
-  position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px);
+  position: relative; top: 0; z-index: 50; backdrop-filter: blur(14px);
   background: rgba(251, 248, 243, 0.88); border-bottom: 1px solid var(--line);
 }
 .navbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 0; }
@@ -434,7 +434,7 @@ button, input, select, textarea { font: inherit; }
 
 .hero::after {
 
-  content: "V CRAFT";
+  content: "V CRAFT BEDS";
 
   position: absolute;
 
